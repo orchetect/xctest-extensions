@@ -1,6 +1,6 @@
 //
 //  XCUIElement Extensions.swift
-//  XCTestUtils • https://github.com/orchetect/XCTestUtils
+//  xctest-extensions • https://github.com/orchetect/xctest-extensions
 //  © 2024 Steffan Andrews • Licensed under MIT License
 //
 

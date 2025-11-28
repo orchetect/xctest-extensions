@@ -23,7 +23,7 @@
 --funcattributes prev-line
 --groupedextension "MARK: %c"
 --guardelse auto
---header "\n {file}\n XCTestUtils • https://github.com/orchetect/XCTestUtils\n © {year} Steffan Andrews • Licensed under MIT License\n"
+--header "\n {file}\n xctest-extensions • https://github.com/orchetect/xctest-extensions\n © {year} Steffan Andrews • Licensed under MIT License\n"
 --hexgrouping 4,8
 --hexliteralcase uppercase
 --ifdef no-indent
@@ -37,7 +37,7 @@
 --markcategories true
 --markextensions always
 --marktypes always
---maxwidth 100
+--maxwidth 140
 --modifierorder 
 --nevertrailing 
 --nospaceoperators 

@@ -1,11 +1,11 @@
 //
 //  Wait Tests.swift
-//  XCTestUtils • https://github.com/orchetect/XCTestUtils
+//  xctest-extensions • https://github.com/orchetect/xctest-extensions
 //  © 2022 Steffan Andrews • Licensed under MIT License
 //
 
 import XCTest
-import XCTestUtils
+import XCTestExtensions
 
 final class WaitTests: XCTestCase {
     func testWaitForEqual_True() {

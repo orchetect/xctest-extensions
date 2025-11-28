@@ -1,6 +1,6 @@
-# XCTestUtils
+# xctest-extensions
 
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Forchetect%2FXCTestUtils%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/orchetect/XCTestUtils) [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Forchetect%2FXCTestUtils%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/orchetect/XCTestUtils) [![Xcode 13-16](https://img.shields.io/badge/Xcode-13–16-blue.svg?style=flat)](https://developer.apple.com/swift) [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/orchetect/XCTestUtils/blob/main/LICENSE)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Forchetect%2Fxctest-extensions%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/orchetect/xctest-extensions) [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Forchetect%2Fxctest-extensions%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/orchetect/xctest-extensions) [![Xcode 15-26](https://img.shields.io/badge/Xcode-15–26-blue.svg?style=flat)](https://developer.apple.com/swift) [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/orchetect/xctest-extensions/blob/main/LICENSE)
 
 Useful XCTest utilities and extensions for test targets.
 
@@ -86,36 +86,38 @@ let okButton = await app.staticTexts["Idle"].firstMatch
 try await okButton.wait(for: \.label, toEqual: "Active", throwingTimeout: 2.0)
 ```
 
-## Installation: Swift Package Manager (SPM)
+## Installation
 
-### Dependency within an Application
+### Swift Package Manager (SPM)
 
-1. Add the package to your Xcode project's test target(s) using `https://github.com/orchetect/XCTestUtils` as the URL.
+To add this package to an Xcode app project, use:
 
-2. Import the module in your test files where needed.
+ `https://github.com/orchetect/xctest-extensions` as the URL.
 
-   ```swift
-   import XCTest
-   import XCTestUtils
-   ```
+To add this package to a Swift package, add the dependency to your package and target in Package.swift:
 
-### Dependency within a Swift Package
-
-1. Add the dependency in your `Package.swift` file:
-
-   ```swift
-   dependencies: [
-       .package(url: "https://github.com/orchetect/XCTestUtils", from: "1.1.2")
-   ],
-   ```
+```swift
+let package = Package(
+    dependencies: [
+        .package(url: "https://github.com/orchetect/xctest-extensions", from: "2.0.0")
+    ],
+    targets: [
+        .target(
+            dependencies: [
+                .product(name: "XCTestExtensions", package: "xctest-extensions")
+            ]
+        )
+    ]
+)
+```
 
 ## Usage
 
-Import the module in test files where needed.
+Import the module in test target files where needed.
 
 ```swift
 import XCTest
-import XCTestUtils
+import XCTestExtensions
 ```
 
 ## Documentation
@@ -126,7 +128,7 @@ All methods have inline help explaining their purpose and basic usage examples.
 
 ## Requirements
 
-Minimum system requirements for testing: Xcode 13 or higher on macOS 11.3 or higher
+Minimum system requirements for testing: Xcode 15 or higher on macOS 11.3 or higher
 
 ## Author
 
@@ -134,15 +136,19 @@ Coded by a bunch of 🐹 hamsters in a trenchcoat that calls itself [@orchetect]
 
 ## License
 
-Licensed under the MIT license. See [LICENSE](https://github.com/orchetect/XCTestUtils/blob/master/LICENSE) for details.
+Licensed under the MIT license. See [LICENSE](https://github.com/orchetect/xctest-extensions/blob/master/LICENSE) for details.
 
 ## Community & Support
 
 Please do not email maintainers for technical support. Several options are available for issues and questions:
 
-- Questions and feature ideas can be posted to [Discussions](https://github.com/orchetect/XCTestUtils/discussions).
-- If an issue is a verifiable bug with reproducible steps it may be posted in [Issues](https://github.com/orchetect/XCTestUtils/issues).
+- Questions and feature ideas can be posted to [Discussions](https://github.com/orchetect/xctest-extensions/discussions).
+- If an issue is a verifiable bug with reproducible steps it may be posted in [Issues](https://github.com/orchetect/xctest-extensions/issues).
 
 ## Contributions
 
-Contributions are welcome. Posting in [Discussions](https://github.com/orchetect/XCTestUtils/discussions) first prior to new submitting PRs for features or modifications is encouraged.
+Contributions are welcome. Posting in [Discussions](https://github.com/orchetect/xctest-extensions/discussions) first prior to new submitting PRs for features or modifications is encouraged.
+
+## Legacy
+
+This repository was formerly known as XCTestUtils.

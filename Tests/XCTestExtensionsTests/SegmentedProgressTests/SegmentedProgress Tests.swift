@@ -1,11 +1,11 @@
 //
 //  SegmentedProgress Tests.swift
-//  XCTestUtils • https://github.com/orchetect/XCTestUtils
+//  xctest-extensions • https://github.com/orchetect/xctest-extensions
 //  © 2022 Steffan Andrews • Licensed under MIT License
 //
 
 import XCTest
-@testable import XCTestUtils
+@testable import XCTestExtensions
 
 class SegmentedProgressTests: XCTestCase {
     override func setUp() { super.setUp() }
