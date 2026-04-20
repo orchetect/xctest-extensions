@@ -1,7 +1,7 @@
 //
 //  XCUIElement Extensions.swift
 //  xctest-extensions • https://github.com/orchetect/xctest-extensions
-//  © 2024 Steffan Andrews • Licensed under MIT License
+//  © 2026 Steffan Andrews • Licensed under MIT License
 //
 
 #if canImport(XCTest)
@@ -62,7 +62,7 @@ extension XCUIElement {
             throw error
         }
     }
-    
+
     /// Wraps `XCUIElement`'s `wait(for:toEqual:timeout:)` in a throwing method.
     ///
     /// Example usage:
@@ -78,12 +78,12 @@ extension XCUIElement {
     ///   - timeout: Timeout time interval in seconds.
     ///   - error: Error to throw if the waiter times out.
     @preconcurrency
-    public func wait<V>(
+    public func wait<V: Equatable>(
         for keyPath: KeyPath<XCUIElement, V>,
         toEqual expectedValue: V,
         throwingTimeout timeout: TimeInterval,
         error: Error = XCTestError(.timeoutWhileWaiting)
-    ) throws where V: Equatable {
+    ) throws {
         guard wait(for: keyPath, toEqual: expectedValue, timeout: timeout) else {
             throw error
         }

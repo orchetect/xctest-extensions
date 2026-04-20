@@ -1,7 +1,7 @@
 //
 //  Utilities.swift
 //  xctest-extensions • https://github.com/orchetect/xctest-extensions
-//  © 2022 Steffan Andrews • Licensed under MIT License
+//  © 2026 Steffan Andrews • Licensed under MIT License
 //
 
 import Foundation
@@ -13,7 +13,7 @@ extension Double {
     ) -> String {
         // sanitize inputs
         let toPlaces = min(max(0, toPlaces), 100)
-	
+
         // Foundation method:
         return String(format: "%.\(toPlaces)f", self) + "%"
     }

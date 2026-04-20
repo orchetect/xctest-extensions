@@ -1,7 +1,7 @@
 //
 //  Wait Bool.swift
 //  xctest-extensions • https://github.com/orchetect/xctest-extensions
-//  © 2022 Steffan Andrews • Licensed under MIT License
+//  © 2026 Steffan Andrews • Licensed under MIT License
 //
 
 #if canImport(XCTest)
@@ -22,28 +22,28 @@ extension XCTestCase {
     ) {
         let inTime = Date()
         let timeoutTime = inTime + timeout
-        
+
         var continueLooping = true
         var timedOut = false
-        
+
         while continueLooping {
             if Date() >= timeoutTime {
                 continueLooping = false
                 timedOut = true
                 continue
             }
-            
+
             let conditionResult = condition()
             continueLooping = !conditionResult
             if !continueLooping { continue }
-            
+
             wait(sec: polling)
         }
-        
+
         if timedOut {
             var msg = message()
             msg = msg.isEmpty ? "" : ": \(msg)"
-            
+
             XCTFail(
                 "wait timed out\(msg)",
                 file: file,
@@ -52,7 +52,7 @@ extension XCTestCase {
             return
         }
     }
-    
+
     /// Wait for a condition to be true, with a timeout period.
     ///
     /// Polling defaults to every 10 milliseconds, but can be overridden.
@@ -66,28 +66,28 @@ extension XCTestCase {
     ) async {
         let inTime = Date()
         let timeoutTime = inTime + timeout
-        
+
         var continueLooping = true
         var timedOut = false
-        
+
         while continueLooping {
             if Date() >= timeoutTime {
                 continueLooping = false
                 timedOut = true
                 continue
             }
-            
+
             let conditionResult = await condition()
             continueLooping = !conditionResult
             if !continueLooping { continue }
-            
+
             wait(sec: polling)
         }
-        
+
         if timedOut {
             var msg = message()
             msg = msg.isEmpty ? "" : ": \(msg)"
-            
+
             XCTFail(
                 "wait timed out\(msg)",
                 file: file,
@@ -96,7 +96,7 @@ extension XCTestCase {
             return
         }
     }
-    
+
     /// Wait for a condition to be true, with a timeout period.
     ///
     /// Polling defaults to every 10 milliseconds, but can be overridden.
@@ -111,28 +111,28 @@ extension XCTestCase {
     ) {
         let inTime = Date()
         let timeoutTime = inTime + timeout
-        
+
         var continueLooping = true
         var timedOut = false
-        
+
         while continueLooping {
             if Date() >= timeoutTime {
                 continueLooping = false
                 timedOut = true
                 continue
             }
-            
+
             let conditionResult = condition()
             continueLooping = !conditionResult
             if !continueLooping { continue }
-            
+
             wait(sec: polling)
         }
-        
+
         if timedOut {
             var msg = message()
             msg = msg.isEmpty ? "" : ": \(msg)"
-            
+
             XCTFail(
                 "wait timed out\(msg)",
                 file: file,
@@ -141,7 +141,7 @@ extension XCTestCase {
             return
         }
     }
-    
+
     /// Wait for a condition to be true, with a timeout period.
     ///
     /// Polling defaults to every 10 milliseconds, but can be overridden.
@@ -156,28 +156,28 @@ extension XCTestCase {
     ) async {
         let inTime = Date()
         let timeoutTime = inTime + timeout
-        
+
         var continueLooping = true
         var timedOut = false
-        
+
         while continueLooping {
             if Date() >= timeoutTime {
                 continueLooping = false
                 timedOut = true
                 continue
             }
-            
+
             let conditionResult = await condition()
             continueLooping = !conditionResult
             if !continueLooping { continue }
-            
+
             wait(sec: polling)
         }
-        
+
         if timedOut {
             var msg = message()
             msg = msg.isEmpty ? "" : ": \(msg)"
-            
+
             XCTFail(
                 "wait timed out\(msg)",
                 file: file,

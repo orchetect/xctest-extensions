@@ -1,7 +1,7 @@
 //
 //  Wait.swift
 //  xctest-extensions • https://github.com/orchetect/xctest-extensions
-//  © 2022 Steffan Andrews • Licensed under MIT License
+//  © 2026 Steffan Andrews • Licensed under MIT License
 //
 
 #if canImport(XCTest)
